@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/plotly-2.4.2.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/plot.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- CSS only -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Welcome to the AppPrivacy report reader</h1>
+
+    <h2>Get the Report file</h2>
+    On <a href="https://www.apple.com/ios/ios-15/features/" target="_Blank">iOS15</a> there is a new functionality to spy
+    apps that are sying on you: <a
+        href="https://www.apple.com/newsroom/2021/06/apple-advances-its-privacy-leadership-with-ios-15-ipados-15-macos-monterey-and-watchos-8/"
+        target="_Blank">AppPrivacyReport</a>.
+
+    It is possible to have agraphical representation using this webpage (which is privacy-friendly and works offline).
+
+    Please, follow this instructions to export your report:
+
+    <ol class="list-group">
+        <li class="list-group-item">Settings</li>
+        <li class="list-group-item">Privacy</li>
+        <li class="list-group-item">Record App Activity (Enable it if it is diabled)</li>
+        <li class="list-group-item">Save App Activity</li>
+    </ol>
+
+    Save your report <emph>.njson</emph> file somewhere and upload it here.
+
+    <h2>Upload your file</h2>
+
+    <input type="file" id="uploadedFile" class="btn btn-link" />
+    <button type="button" onclick="run()" class="btn btn-primary">Run</button>
+
+    <div id="output" style="visibility: hidden;">
+        <h2>Apps' requests</h2>
+        <div style="margin: auto; align-items: center;">
+            <div id="plot_cats" style="width:600px;height:250px;"></div>
+            <div>
+                <div id="plot_apps" style="width:600px;height:250px;"></div>
+                <div id="plot_appscats" style="width:600px;height:250px;"></div>
+            </div>
+            <div>
+                <div id="plot_appscatstime" style="width:600px;height:250px;"></div>
+                <div id="plot_catstime" style="width:600px;height:250px;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
